@@ -1,0 +1,5 @@
+# These libraries are not required for docstring module, but for testing and
+# running examples.
+#
+# -- testing --
+nose

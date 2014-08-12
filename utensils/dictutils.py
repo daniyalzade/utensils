@@ -5,7 +5,7 @@ from copy import copy
 import operator
 import re
 
-from utils.stringutils import normalize
+from utensils.stringutils import normalize
 
 ARRAY_ACCESSOR = re.compile(r'(.*)\[(.*?)\]')
 
