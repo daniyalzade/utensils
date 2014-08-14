@@ -16,13 +16,13 @@ setup(
     description='Library of utilities for python',
     long_description=open('README.rst').read(),
     version=utensils.__version__,
-    #data_files=[
-    #    ('', ['README.rst', 'LICENSE']),
+    data_files=[
+        ('', ['README.rst',]),
     #    ('utensils', [
     #        'utensils/base.html',
     #        'utensils/style.css',
     #        ]),
-    #    ],
+        ],
     package_dir={
         'utensils': 'utensils'
         },
