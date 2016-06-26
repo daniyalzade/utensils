@@ -5,4 +5,4 @@ Installation
 
 To install requests, simply: ::
 
-    $ pip install docstring
+    $ pip install utensils
