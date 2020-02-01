@@ -103,7 +103,7 @@ def _display_msg(msg, use_print=False):
     @param use_print: bool
     """
     if use_print:
-        print msg
+        print(msg)
         return
     logging.info(msg)
 

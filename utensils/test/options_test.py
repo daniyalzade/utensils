@@ -14,9 +14,8 @@ TestTypes = Enum([
 
 class OptionsTest(unittest.TestCase):
     def _clear_options(self):
-        for key in options.keys():
-            if key != 'help':
-                del options[key]
+        return dict([(k, v) for (k, v) in options.items() if k != 'help'])
+
     def setUp(self):
         self._clear_options()
         # these are currently required
