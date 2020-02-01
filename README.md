@@ -31,3 +31,14 @@ set_dotted(foo, 'bar.dar', 5)
 print(get_dotted(foo, 'bar.dar') == 5)
 print(get_dotted(foo, 'test[2]') == 3)
 ```
+
+# Contribution
+
+* Make sure that the tests are passing before opening up the PR
+* Create a PR for feature enhancements
+* Once a PR is merged, update version with the following commands:
+
+```
+bumpversion patch
+git push origin master --tags
+```
