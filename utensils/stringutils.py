@@ -1,6 +1,5 @@
 # This Python file uses the following encoding: utf-8
 import logging
-import HTMLParser
 import posixpath
 import random
 import re
@@ -113,27 +112,6 @@ def normalize(s):
     s = s.replace('&nbsp;', ' ')
     s = s.strip().lower()
     return s
-
-def unformat_phone_number(phone):
-    """
-    input: 516.873.7380 output: 5168737380
-    input: 516-873-7380 output: 5168737380
-    input: (212) 431-2686 output: 2124312686
-    """
-    phone = phone.replace(' ', '')
-    h = HTMLParser.HTMLParser()
-    phone = h.unescape(phone)
-    match = PHONE_NUMBER_PATTERN.search(phone)
-    if match:
-        return ''.join(match.groups())
-    phone = re.sub(r'[^\d]+', '', phone)
-
-    if phone and phone[0] == '1':
-        phone = phone[1:]
-
-    if len(phone) != 10:
-        raise ValueError("phone number %s is not 10 digits long, potential error" % phone)
-    return phone
 
 def to_upper_first_chars(str_):
     return ' '.join([word.capitalize() for word in str_.lower().split(' ')])

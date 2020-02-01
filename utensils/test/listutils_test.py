@@ -10,23 +10,24 @@ from utensils.listutils import to_multilist
 
 class TestListutils(unittest.TestCase):
     def test_batch(self):
-        print [b for b in batch([1], 10)]
+        print([b for b in batch([1], 10)])
 
     def test_find(self):
         self.assertEquals(None, find(range(5), lambda i: i>4))
         self.assertEquals(4, find(range(5), lambda i: i>3))
 
     def test_push_to_front(self):
-        self.assertEquals([0, 1, 2, 3, 4], push_to_front(range(5), lambda i: i>-1))
-        self.assertEquals([0, 1, 2, 3, 4], push_to_front(range(5), lambda i: i>6))
-        self.assertEquals([4, 0, 1, 2, 3], push_to_front(range(5), lambda i: i>3))
-        self.assertEquals([3, 0, 1, 2, 4], push_to_front(range(5), lambda i: i>2))
+        result = list(range(5))
+        self.assertEquals([0, 1, 2, 3, 4], push_to_front(result, lambda i: i>-1))
+        self.assertEquals([0, 1, 2, 3, 4], push_to_front(result, lambda i: i>6))
+        self.assertEquals([4, 0, 1, 2, 3], push_to_front(result, lambda i: i>3))
+        self.assertEquals([3, 0, 1, 2, 4], push_to_front(result, lambda i: i>2))
 
     def test_merge(self):
-        merged = merge(range(0, 10), range(100, 110), mix_percentage=0)
+        merged = merge(list(range(0, 10)), list(range(100, 110)), mix_percentage=0)
         merged = [m for m in merged[:10] if m <= 100]
         self.assertEquals(10, len(merged))
-        merged = merge(range(0, 10), range(100, 110), mix_percentage=100)
+        merged = merge(list(range(0, 10)), list(range(100, 110)), mix_percentage=100)
         merged = [m for m in merged[:10] if m >= 100]
         self.assertEquals(10, len(merged))
 

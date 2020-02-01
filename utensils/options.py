@@ -129,7 +129,7 @@ def parse_command_line(args=None):
     """
     if args is None: args = sys.argv
     remaining = []
-    for i in xrange(1, len(args)):
+    for i in range(1, len(args)):
         # All things after the last option are command line arguments
         if not args[i].startswith("-"):
             remaining = args[i:]
@@ -187,11 +187,11 @@ def print_help(file=sys.stdout, raw_args=None):
     extra = ''
     if raw_args:
         extra = ' %s' % raw_args
-    print >> file, "Usage: %s [OPTIONS]%s" % (sys.argv[0], extra)
-    print >> file, ""
-    print >> file, "Options:"
+    print("Usage: %s [OPTIONS]%s" % (sys.argv[0], extra), file=file)
+    print("", file=file)
+    print("Options:", file=file)
     by_file = {}
-    for option in options.itervalues():
+    for option in iter(options.values()):
         by_file.setdefault(option.file_name, []).append(option)
 
     for filename, o in sorted(by_file.items()):
@@ -207,9 +207,9 @@ def print_help(file=sys.stdout, raw_args=None):
             if option.required:
                 additional_txt += " [required]"
 
-            print >> file, ("  --%-30s %s%s" %
-                (prefix, option.help or "", additional_txt))
-    print >> file
+            print("  --%-30s %s%s" % (prefix, option.help or "", additional_txt),
+                  file=file
+                  )
 
 def read_options(name, required=None):
     """
