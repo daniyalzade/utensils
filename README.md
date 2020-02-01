@@ -8,9 +8,26 @@ Random python utility libraries.
 
 # Installation
 
-
 Install using pip:
 
 ```sh
 pip install utensils
+```
+
+# Usage
+
+Safe accessors for Python dictionaries
+
+```py
+from utensils.dictutils import get_dotted
+from utensils.dictutils import set_dotted
+
+foo = {
+    'test': [1, 2, 3]
+}
+
+set_dotted(foo, 'bar.dar', 5)
+
+print(get_dotted(foo, 'bar.dar') == 5)
+print(get_dotted(foo, 'test[2]') == 3)
 ```
