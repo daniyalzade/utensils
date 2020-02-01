@@ -14,10 +14,10 @@ setup(
     url='http://daniyalzade.com',
     packages=packages,
     description='Library of utilities for python',
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
     version=utensils.__version__,
     data_files=[
-        ('', ['README.rst',]),
+        ('', ['README.md',]),
     #    ('utensils', [
     #        'utensils/base.html',
     #        'utensils/style.css',
