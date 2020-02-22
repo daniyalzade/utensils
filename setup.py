@@ -17,13 +17,10 @@ setup(
     license='BSD',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    version=utensils.__version__,
+    version='0.0.42',
     package_dir={
         'utensils': 'utensils'
         },
-    data_files=[
-        ('', ['README.md',]),
-    ],
     classifiers=[
         "License :: OSI Approved :: BSD License",
     ]
