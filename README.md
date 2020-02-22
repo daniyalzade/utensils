@@ -56,5 +56,5 @@ git push origin master --tags
 `tox` creates a package in `.tox/dist`. Use twine to upload it to pypi:
 
 ```sh
-twine upload .tox/dist/django_reverse_admin-*.zip
+twine upload .tox/dist/utensils-*.zip
 ```
