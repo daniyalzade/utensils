@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 import utensils
 
 requires = []
@@ -9,29 +9,16 @@ packages = [
 
 setup(
     name='utensils',
-    author='Eytan Daniyalzade',
-    author_email='eytan85@gmail.com',
-    url='http://daniyalzade.com',
+    version='0.0.43',
     packages=packages,
     description='Library of utilities for python',
+    license='BSD',
     long_description=open('README.md').read(),
-    version=utensils.__version__,
-    data_files=[
-        ('', ['README.md',]),
-    #    ('utensils', [
-    #        'utensils/base.html',
-    #        'utensils/style.css',
-    #        ]),
-        ],
+    long_description_content_type='text/markdown',
     package_dir={
         'utensils': 'utensils'
         },
-    #package_data={
-    #    'utensils': [
-    #        '*.html',
-    #        '*.css',
-    #        ],
-    #    },
-    install_requires=requires,
-    include_package_data=True,
+    classifiers=[
+        "License :: OSI Approved :: BSD License",
+    ]
 )
