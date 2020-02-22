@@ -14,6 +14,14 @@ Install using pip:
 pip install utensils
 ```
 
+# Testing
+
+Use `tox` for testing.
+
+```sh
+tox
+```
+
 # Usage
 
 Safe accessors for Python dictionaries
@@ -41,4 +49,12 @@ print(get_dotted(foo, 'test[2]') == 3)
 ```
 bumpversion patch
 git push origin master --tags
+```
+
+# Packaging
+
+`tox` creates a package in `.tox/dist`. Use twine to upload it to pypi:
+
+```sh
+twine upload .tox/dist/django_reverse_admin-*.zip
 ```

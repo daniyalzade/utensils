@@ -14,24 +14,17 @@ setup(
     url='http://daniyalzade.com',
     packages=packages,
     description='Library of utilities for python',
+    license='BSD',
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     version=utensils.__version__,
-    data_files=[
-        ('', ['README.md',]),
-    #    ('utensils', [
-    #        'utensils/base.html',
-    #        'utensils/style.css',
-    #        ]),
-        ],
     package_dir={
         'utensils': 'utensils'
         },
-    #package_data={
-    #    'utensils': [
-    #        '*.html',
-    #        '*.css',
-    #        ],
-    #    },
-    install_requires=requires,
-    include_package_data=True,
+    data_files=[
+        ('', ['README.md',]),
+    ],
+    classifiers=[
+        "License :: OSI Approved :: BSD License",
+    ]
 )
