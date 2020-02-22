@@ -9,7 +9,7 @@ packages = [
 
 setup(
     name='utensils',
-    version='0.0.43',
+    version='1.0.0',
     packages=packages,
     description='Library of utilities for python',
     license='BSD',
